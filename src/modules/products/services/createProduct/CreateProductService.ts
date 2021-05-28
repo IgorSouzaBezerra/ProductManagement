@@ -16,12 +16,14 @@ class CreateProductService {
     category,
     amount,
     value,
+    available,
   }: ICreateProductDTO): Promise<IProduct> {
     const product = await this.productsRepository.create({
       name,
       category,
       amount,
       value,
+      available,
     });
     return product;
   }

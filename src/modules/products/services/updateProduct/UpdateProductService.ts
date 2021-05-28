@@ -17,6 +17,7 @@ class UpdateProductService {
     category,
     amount,
     value,
+    available,
   }: IUpdateProductDTO): Promise<IProduct | null> {
     const updateUser = this.productsRepository.update({
       _id,
@@ -24,6 +25,7 @@ class UpdateProductService {
       category,
       amount,
       value,
+      available,
     });
 
     return updateUser;

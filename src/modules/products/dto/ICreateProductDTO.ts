@@ -3,6 +3,7 @@ interface ICreateProductDTO {
   category: string;
   amount: number;
   value: number;
+  available: boolean;
 }
 
 export { ICreateProductDTO };

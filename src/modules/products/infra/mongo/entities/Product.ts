@@ -27,6 +27,10 @@ const ProductSchema = new Schema({
     type: Number,
     require: true,
   },
+  available: {
+    type: Boolean,
+    require: true,
+  },
   created_at: {
     type: Date,
     default: Date.now(),

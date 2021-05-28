@@ -5,7 +5,7 @@ import { CreateProductService } from "./CreateProductService";
 
 class CreateProductController {
   public async handle(request: Request, response: Response): Promise<Response> {
-    const { name, category, amount, value } = request.body;
+    const { name, category, amount, value, available } = request.body;
 
     const createProductService = container.resolve(CreateProductService);
 
@@ -14,6 +14,7 @@ class CreateProductController {
       category,
       amount,
       value,
+      available,
     });
 
     return response.status(201).json(product);

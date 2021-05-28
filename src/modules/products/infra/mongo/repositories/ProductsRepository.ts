@@ -16,12 +16,14 @@ class ProductsRepository implements IProductsRepository {
     category,
     amount,
     value,
+    available,
   }: ICreateProductDTO): Promise<IProduct> {
     const product = await this.repository.create({
       name,
       category,
       amount,
       value,
+      available,
     });
 
     return product;
@@ -33,10 +35,11 @@ class ProductsRepository implements IProductsRepository {
     category,
     amount,
     value,
+    available,
   }: IUpdateProductDTO): Promise<IProduct | null> {
     const updatedProduct = await this.repository.findOneAndUpdate(
       { _id },
-      { name, category, amount, value }
+      { name, category, amount, value, available }
     );
 
     return updatedProduct;
@@ -56,9 +59,10 @@ class ProductsRepository implements IProductsRepository {
 
   public async list(page: number): Promise<IProduct[]> {
     const products = await this.repository
-      .find()
+      .find({ available: true })
       .limit(this.limitPage)
       .skip(page * this.limitPage);
+
     return products;
   }
 }
