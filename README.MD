@@ -5,7 +5,7 @@ Dentro de uma arquitetura de micro serviço precisamos de uma API para cadastro 
 
 ### Requisitos funcionais
 	- [x] Como gerente gostaria de adicionar um novo produto ao catálogo da loja
-	- Como gerente gostaria de editar um produto existente no catálogo
+	- [x] Como gerente gostaria de editar um produto existente no catálogo
 	- [x] Como gerente gostaria de remover o produto do meu catálogo da loja
 	- [x] Como gerente gostaria de recuperar uma lista com os produtos disponíveis
 	- [x] Como gerente gostaria de buscar produtos
