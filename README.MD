@@ -12,6 +12,7 @@ Dentro de uma arquitetura de micro serviço precisamos de uma API para cadastro 
 	- [x] Como gerente preciso que os resultados sejam páginados
 	- [x] Como gerente quero que apenas pessoas com permissão possam: adicionar, editar remover produtos
 	- [x] Como cliente quero visualizar um produto
+
 ### Requisitos não funcionais
 	- [x] A API deve seguir um padrão rest
 	- Implemente ao menos 3 testes unitários
