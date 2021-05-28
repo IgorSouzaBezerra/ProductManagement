@@ -4,7 +4,7 @@ import { IProduct } from "../../infra/mongo/entities/Product";
 import { IProductsRepository } from "../../repositories/IProductsRepository";
 
 @injectable()
-class ListProductService {
+class SearchProductsService {
   constructor(
     @inject("ProductsRepository")
     private productsRepository: IProductsRepository
@@ -17,4 +17,4 @@ class ListProductService {
   }
 }
 
-export { ListProductService };
+export { SearchProductsService };

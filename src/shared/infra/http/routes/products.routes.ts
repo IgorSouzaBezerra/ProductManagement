@@ -1,9 +1,9 @@
 import { Router } from "express";
 
 import { CreateProductController } from "../../../../modules/products/services/createProduct/CreateProductController";
-import { ListProductController } from "../../../../modules/products/services/listProduct/ListProductController";
 import { ListProductsController } from "../../../../modules/products/services/listProducts/ListProductsController";
 import { RemoveProductController } from "../../../../modules/products/services/removeProduct/RemoveProductController";
+import { SearchProductsController } from "../../../../modules/products/services/searchProducts/SearchProductsController";
 import { UpdateProductController } from "../../../../modules/products/services/updateProduct/UpdateProductController";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 import { ensureIsManager } from "../middlewares/ensurerIsManager";
@@ -12,7 +12,7 @@ const productsRoutes = Router();
 
 const listProductsController = new ListProductsController();
 
-const listProductController = new ListProductController();
+const listProductController = new SearchProductsController();
 
 const updateProductController = new UpdateProductController();
 const createProductController = new CreateProductController();
