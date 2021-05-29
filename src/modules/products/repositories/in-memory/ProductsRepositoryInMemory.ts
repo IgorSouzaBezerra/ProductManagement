@@ -68,10 +68,14 @@ class ProductsRepositoryInMemory implements IProductsRepository {
     return product;
   }
 
-  public async findById(id: string): Promise<IProduct | undefined> {
+  public async findById(id: string): Promise<IProduct | null> {
     const product = this.products.find((p) => p._id === id);
 
-    return product;
+    if (product) {
+      return product;
+    }
+
+    return null;
   }
 
   public async list(page: number): Promise<IProduct[]> {
