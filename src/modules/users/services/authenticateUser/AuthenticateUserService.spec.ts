@@ -24,7 +24,7 @@ describe("Create User", () => {
   });
 
   it("should be able to authenticate an user", async () => {
-    const user = await createUserService.execute({
+    await createUserService.execute({
       name: "Ricky Dean",
       email: "onepu@namukug.mq",
       password: "2158226742",
@@ -32,8 +32,8 @@ describe("Create User", () => {
     });
 
     const result = await authenticateUserService.execute(
-      user.email,
-      user.password
+      "onepu@namukug.mq",
+      "2158226742"
     );
 
     expect(result).toHaveProperty("token");
