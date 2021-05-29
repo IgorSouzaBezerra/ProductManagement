@@ -15,13 +15,13 @@ Dentro de uma arquitetura de micro serviço precisamos de uma API para cadastro 
 
 ### Requisitos não funcionais
 	- [x] A API deve seguir um padrão rest
-	- Implemente ao menos 3 testes unitários
+	- [x] Implemente ao menos 3 testes unitários
 	- [x] Trate os possíveis erros com com os padrões HTTP
 	- [x] Persistir dados utilizando um NoSQL database
 
 ### Entrega
 	- [x] Um repositório Git (BitBucket, GitHub, …)
-	- Um ambiente rodando a aplicação (Heroku, Firebase, …)
+	- [x] Um ambiente rodando a aplicação (Heroku, Firebase, …)
 
 ### Critérios de avaliação
 	- Entendimento dos requisitos
