@@ -19,8 +19,8 @@ describe("Create User", () => {
 
   it("should be able to create user", async () => {
     const user = await createUserService.execute({
-      name: "Ricky Dean",
-      email: "onepu@namukug.mq",
+      name: "Jason Carroll",
+      email: "diw@fucce.tk",
       password: "2158226742",
       role: "123",
     });
@@ -31,15 +31,16 @@ describe("Create User", () => {
   it("should not be possible to create users with the same email", () => {
     expect(async () => {
       await createUserService.execute({
-        name: "Ricky Dean",
-        email: "onepu@namukug.mq",
-        password: "2158226742",
+        name: "Rebecca Nguyen",
+        email: "ratsel@udkuv.ie",
+        password: "3193189863",
         role: "123",
       });
+
       await createUserService.execute({
-        name: "Ricky Dean",
-        email: "onepu@namukug.mq",
-        password: "2158226742",
+        name: "Rebecca Nguyen",
+        email: "ratsel@udkuv.ie",
+        password: "3193189863",
         role: "123",
       });
     }).rejects.toEqual(new AppError("User already exists!", 409));

@@ -25,14 +25,14 @@ describe("Create User", () => {
 
   it("should be able to authenticate an user", async () => {
     await createUserService.execute({
-      name: "Ricky Dean",
-      email: "onepu@namukug.mq",
+      name: "Edna Ross",
+      email: "penkek@datkos.me",
       password: "2158226742",
       role: "123",
     });
 
     const result = await authenticateUserService.execute(
-      "onepu@namukug.mq",
+      "penkek@datkos.me",
       "2158226742"
     );
 
@@ -48,8 +48,8 @@ describe("Create User", () => {
   it("should not be able to authenticate with incorrect password", () => {
     expect(async () => {
       const user = await createUserService.execute({
-        name: "Ricky Dean",
-        email: "onepu@namukug.mq",
+        name: "Henry Gill",
+        email: "hazoje@ogodumgi.au",
         password: "2158226742",
         role: "123",
       });
