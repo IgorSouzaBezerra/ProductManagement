@@ -6,6 +6,7 @@ export interface IProduct {
   category: string;
   amount: number;
   value: number;
+  available: boolean;
   created_at: Date;
   __v: number;
 }

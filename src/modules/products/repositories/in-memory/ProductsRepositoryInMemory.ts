@@ -68,23 +68,9 @@ class ProductsRepositoryInMemory implements IProductsRepository {
     return product;
   }
 
-  public async list(pageActual: number): Promise<IProduct[]> {
-    const result = [];
-    const limitItems = 10;
-
-    const totalPage = this.products.length;
-    let count = pageActual * limitItems - limitItems;
-
-    const delimiter = count + limitItems;
-
-    if (pageActual <= totalPage) {
-      for (let i = count; i < delimiter; i += 1) {
-        result.push(this.products[i]);
-        count += count;
-      }
-    }
-
-    return result;
+  public async list(page: number): Promise<IProduct[]> {
+    const products = this.products.filter((p) => p.available === true);
+    return products;
   }
 }
 export { ProductsRepositoryInMemory };
