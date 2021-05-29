@@ -35,6 +35,7 @@
 				}
 			}
 		],
+		"no-underscore-dangle":"off",
 		"no-plusplus": "off",
 		"class-methods-use-this": "off",
 		"import/prefer-default-export": "off",

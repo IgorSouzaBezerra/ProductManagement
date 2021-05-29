@@ -7,6 +7,7 @@ interface IProductsRepository {
   update(product: IUpdateProductDTO): Promise<IProduct | null>;
   remove(id: string): Promise<void>;
   searchByName(name: string): Promise<IProduct[] | null>;
+  findById(id: string): Promise<IProduct | undefined>;
   list(page: number): Promise<IProduct[]>;
 }
 

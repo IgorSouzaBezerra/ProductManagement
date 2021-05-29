@@ -62,8 +62,6 @@ describe("List Products", () => {
 
     const result = await listProductsService.execute(1);
 
-    console.log(result);
-
     expect(result.length).toEqual(4);
   });
 });
