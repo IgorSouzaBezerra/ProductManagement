@@ -9,7 +9,7 @@ let hashProvider: BCryptHashProvider;
 let createUserService: CreateUserService;
 let authenticateUserService: AuthenticateUserService;
 
-describe("Create User", () => {
+describe("Authenticate User", () => {
   beforeAll(() => {
     usersRepositoryInMemory = new UsersRepositoryInMemory();
     hashProvider = new BCryptHashProvider();
@@ -39,12 +39,6 @@ describe("Create User", () => {
     expect(result).toHaveProperty("token");
   });
 
-  it("should not be able to authenticate an nonexisting user", () => {
-    expect(async () => {
-      await authenticateUserService.execute("fake@fake.com", "fake");
-    }).rejects.toEqual(new AppError("Email or password incorrect!", 401));
-  });
-
   it("should not be able to authenticate with incorrect password", () => {
     expect(async () => {
       const user = await createUserService.execute({
@@ -56,5 +50,11 @@ describe("Create User", () => {
 
       await authenticateUserService.execute(user.email, "fake");
     }).rejects.toEqual(new AppError("Email or password incorrect!"));
+  });
+
+  it("should not be able to authenticate an nonexisting user", () => {
+    expect(async () => {
+      await authenticateUserService.execute("fake@fake.com", "fake");
+    }).rejects.toEqual(new AppError("Email or password incorrect!", 401));
   });
 });
