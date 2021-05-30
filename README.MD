@@ -1,3 +1,6 @@
+![fluxo de trabalho de exemplo](https://github.com/IgorSouzaBezerra/ProductManagement/actions/workflows/main.yml/badge.svg)
+
+
 # Criação de API em NodeJS
 
 ## História
