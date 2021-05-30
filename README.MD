@@ -1,33 +1,31 @@
-# Criação de API em NodeJS
+![fluxo de trabalho de exemplo](https://github.com/IgorSouzaBezerra/ProductManagement/actions/workflows/main.yml/badge.svg)
 
-## História
-Dentro de uma arquitetura de micro serviço precisamos de uma API para cadastro de produtos para uma loja genérica.
+## Usage
 
-### Requisitos funcionais
-	- [x] Como gerente gostaria de adicionar um novo produto ao catálogo da loja
-	- [x] Como gerente gostaria de editar um produto existente no catálogo
-	- [x] Como gerente gostaria de remover o produto do meu catálogo da loja
-	- [x] Como gerente gostaria de recuperar uma lista com os produtos disponíveis
-	- [x] Como gerente gostaria de buscar produtos
-	- [x] Como gerente preciso que os resultados sejam páginados
-	- [x] Como gerente quero que apenas pessoas com permissão possam: adicionar, editar remover produtos
-	- [x] Como cliente quero visualizar um produto
+```bash
+$ git clone https://github.com/IgorSouzaBezerra/ProductManagement.git
+```
 
-### Requisitos não funcionais
-	- [x] A API deve seguir um padrão rest
-	- [x] Implemente ao menos 3 testes unitários
-	- [x] Trate os possíveis erros com com os padrões HTTP
-	- [x] Persistir dados utilizando um NoSQL database
+## Install Dependency Yarn
+```bash
+$ yarn install
+```
 
-### Entrega
-	- [x] Um repositório Git (BitBucket, GitHub, …)
-	- [x] Um ambiente rodando a aplicação (Heroku, Firebase, …)
+## Unitary Tests
 
-### Critérios de avaliação
-	- Entendimento dos requisitos
-	- Afinidade com a ferramenta utilizada
-	- Testes unitários
-	- Estrutura de arquivos
-	- Padrão de escrita do código
-	- Utilização de boas práticas
+```bash
+$ yarn test
+```
 
+## Database Connection
+
+in the file 
+**src/shared/infra/http/mongo/index.ts**
+insert connection string with mongo
+
+![Screenshot_20210530_182904](https://user-images.githubusercontent.com/47788076/120120647-ff635880-c174-11eb-98c4-ec42b4f652f6.png)
+
+
+
+
+Documentation with **Swagger** https://desafio-southsystem.herokuapp.com/api-docs/
