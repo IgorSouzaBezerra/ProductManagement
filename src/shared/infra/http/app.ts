@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable import-helpers/order-imports */
 import "reflect-metadata";
+import "dotenv";
 import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
