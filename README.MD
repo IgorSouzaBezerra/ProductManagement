@@ -13,10 +13,10 @@ $ npm install
 ```
 
 Database Connection
-```
 src/shared/infra/http/mongo/index.ts
+
 ![Screenshot_20210530_182904](https://user-images.githubusercontent.com/47788076/120120647-ff635880-c174-11eb-98c4-ec42b4f652f6.png)
-```
+
 
 
 
