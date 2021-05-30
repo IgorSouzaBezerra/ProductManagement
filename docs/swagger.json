@@ -7,5 +7,396 @@
     "contact": {
       "email": "igor.souza1.bezerra@gmail.com"
     }
+  },
+  "paths": {
+    "/role": {
+      "post": {
+        "tags": ["Roles"],
+        "summary": "Create a role",
+        "description": "Create a new role",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "description": "Role description"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a user",
+        "description": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type":"string"
+                  }
+                },
+                "example": {
+                  "name": "Allie Houston",
+                  "email": "vuneule@elrupluf.gy",
+                  "password": "12345",
+                  "role": "ObjectId_role"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "409": {
+            "description": "User already exists!"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Users"],
+        "summary": "List all users",
+        "description": "List all users",
+        "security": [
+          { "bearerAuth": [] }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      },
+                      "role": {
+                        "type":"string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": [
+              "Permission is missing!",
+              "User  isn't already exists",
+              "Token missing!"
+            ]
+          }
+        }
+      }
+    },
+    "/session": {
+      "post": {
+        "tags": ["Session"],
+        "summary": "Authentication user",
+        "description": "Authentication user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Email or password incorrect!"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "List all products",
+        "description": "List all products",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "_id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": "number"
+                      },
+                      "value": {
+                        "type":"number"
+                      },
+                      "available": {
+                        "type": "boolean"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "__v": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": [
+              "Permission is missing!",
+              "User  isn't already exists",
+              "Token missing!"
+            ]
+          }
+        }
+      },
+      "post": {
+        "tags": ["Products"],
+        "summary": "Create a product",
+        "description": "Create a product",
+        "security": [
+          { "bearerAuth": [] }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number"
+                  },
+                  "value": {
+                    "type":"number"
+                  },
+                  "available": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Products"],
+        "summary": "Edit a product",
+        "description": "Edit a product",
+        "security": [
+          { "bearerAuth": [] }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number"
+                  },
+                  "value": {
+                    "type":"number"
+                  },
+                  "available": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Edited"
+          }
+        }
+      }
+    },
+    "/products/search/": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "Search products",
+        "description": "Search products",
+        "security": [
+          { "bearerAuth": [] }
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "search",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "_id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": "number"
+                      },
+                      "value": {
+                        "type":"number"
+                      },
+                      "available": {
+                        "type": "boolean"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "__v": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": [
+              "Permission is missing!",
+              "User  isn't already exists",
+              "Token missing!"
+            ]
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "delete": {
+        "tags": ["Products"],
+        "summary": "Delete a product",
+        "description": "Delte a product",
+        "security": [
+          { "bearerAuth": [] }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Product Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "400": {
+            "description": "Product isn't alredy exists"
+          }
+        }
+      }
+    }
+  },
+  "components": { 
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
   }
 }
