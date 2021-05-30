@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ProductManagement Documentation",
+    "description": "This is an API ProductManagement",
+    "version": "1.0.0",
+    "contact": {
+      "email": "igor.souza1.bezerra@gmail.com"
+    }
+  }
+}
