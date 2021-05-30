@@ -12,8 +12,11 @@ $ yarn install
 $ npm install
 
 ```
+Database Connection
+```
+
+```
 
 
 
-
-Documentação API https://desafio-southsystem.herokuapp.com/api-docs/
+Documentation with **Swagger** https://desafio-southsystem.herokuapp.com/api-docs/
