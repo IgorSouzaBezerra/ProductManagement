@@ -26,7 +26,7 @@ class UpdateProductService {
       throw new AppError("Product Already exists!");
     }
 
-    const updateProduct = this.productsRepository.update({
+    this.productsRepository.update({
       _id,
       name,
       category,
@@ -35,7 +35,9 @@ class UpdateProductService {
       available,
     });
 
-    return updateProduct;
+    const newProduct = await this.productsRepository.findById(_id);
+
+    return newProduct;
   }
 }
 
