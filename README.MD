@@ -6,10 +6,15 @@
 $ git clone https://github.com/IgorSouzaBezerra/ProductManagement.git
 ```
 
-### Install Dependency Yarn or Npm
+### Install Dependency Yarn
 ```bash
 $ yarn install
-$ npm install
+```
+
+### Unitary Tests
+
+```bash
+$ yarn test
 ```
 
 ### Database Connection
