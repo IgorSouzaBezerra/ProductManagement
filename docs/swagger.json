@@ -115,13 +115,6 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": [
-              "Permission is missing!",
-              "User  isn't already exists",
-              "Token missing!"
-            ]
           }
         }
       }
@@ -143,6 +136,10 @@
                   "password": {
                     "type": "string"
                   }
+                },
+                "example": {
+                  "email": "igor@igor.com",
+                  "password": "123abc"
                 }
               }
             }
@@ -240,6 +237,13 @@
                   "available": {
                     "type": "boolean"
                   }
+                },
+                "example": {
+                  "name": "Snow Flakes",
+                  "category": "Cereais",
+                  "amount": 2,
+                  "value": 10,
+                  "available": true
                 }
               }
             }
@@ -352,13 +356,6 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": [
-              "Permission is missing!",
-              "User  isn't already exists",
-              "Token missing!"
-            ]
           }
         }
       }
