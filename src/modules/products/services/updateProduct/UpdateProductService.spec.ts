@@ -46,6 +46,6 @@ describe("Update Product", () => {
         value: 100,
         available: true,
       });
-    }).rejects.toEqual(new AppError("Product Already exists!"));
+    }).rejects.toEqual(new AppError("Product isn't alredy exists"));
   });
 });
